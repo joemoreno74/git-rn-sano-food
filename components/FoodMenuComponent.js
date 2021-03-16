@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
-import SANOMEAL from '../shared/SanoMeal';
-
-
-
+import  SANOMEAL from '../shared/SanoMeal';
 
   
 class FoodMenu extends Component {
-
     static navigationOptions = {
         title: 'FoodMenu'
     };
-
-
-     
     render() {
-
-    
-
-        return (
+      return (
             <View>
             {
                 SANOMEAL.map((item, i) => (

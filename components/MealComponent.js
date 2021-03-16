@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  Avatar, ListItem } from 'react-native-elements';
 import {  StyleSheet, View } from 'react-native';
-import SANOMENU from '../shared/SanoMenu';
+import  SANOMENU  from '../shared/SanoMenu';
 
 
 

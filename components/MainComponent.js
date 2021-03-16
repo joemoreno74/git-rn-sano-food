@@ -9,7 +9,6 @@ import {
   StyleSheet,
 } from "react-native";
 import { Icon } from "react-native-elements";
-import SafeAreaView from "react-native-safe-area-view";
 import { createDrawerNavigator, DrawerItems } from "react-navigation-drawer";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";

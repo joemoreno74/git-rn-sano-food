@@ -1,24 +1,8 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, SafeAreaView } from 'react-native'
 import CarouselCards from './CarouselCardsComponent'
-import SafeAreaView from "react-native-safe-area-view";
 
-// export default function Home() {
-// return (
 
-//   <SafeAreaView>
-//     <CarouselCards />
-//     </SafeAreaView>
-//   );
-// }
-// const styles = StyleSheet.create({
-//   container: {
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     padding: 50
-//   },
-// });
 
 class Home extends Component {
 
@@ -29,8 +13,9 @@ class Home extends Component {
     render() {
         return (
 
-              <CarouselCards />
-
+          <SafeAreaView style={styles.container}>
+             <CarouselCards />
+           </SafeAreaView>
         );
 }
 }
