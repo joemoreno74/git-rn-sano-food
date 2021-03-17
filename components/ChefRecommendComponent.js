@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import { ScrollView, Text, StyleSheet } from "react-native";
+import { ScrollView, Text, StyleSheet, View, Image, Dimensions } from "react-native";
 import { Card } from "react-native-elements";
+import CHEFRECOMMEND from "../shared/ChefRecommend"
+
+export const SLIDER_WIDTH = Dimensions.get('window').width + 80
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
 function Recommendation() {
   return (
@@ -22,30 +26,23 @@ class ChefRecommended extends Component {
     return (
       <ScrollView>
         <Recommendation />
-        <Card>
-          <Card.Title>Boost Up Breakfast</Card.Title>
-          <Card.Divider />
-          <Card.Image source={require("./img/breakfast-sano-food.jpg")} />
-          <Text style={styles.chefCardText}>
-            Boost up your morning with Sano ultimate breakfast!
-          </Text>
-        </Card>
-        <Card>
-          <Card.Title>Power Lunch</Card.Title>
-          <Card.Divider />
-          <Card.Image source={require("./img/asparagus-sano-food.jpg")} />
-          <Text style={styles.chefCardText}>
-            Light and healthy lunch that will keep you going for the day.
-          </Text>
-        </Card>
-        <Card>
-          <Card.Title>Sweet Dessert</Card.Title>
-          <Card.Divider />
-          <Card.Image source={require("./img/fruit-sano-food.jpg")} />
-          <Text style={styles.chefCardText}>
-            Simply and healthy fruits that's all you need.
-          </Text>
-        </Card>
+        {
+         CHEFRECOMMEND.map((item, i) => (
+          <View key={i} style={styles.user}> 
+            <Card>
+              <Card.Title>{ item.name }</Card.Title>
+              <Card.Divider />
+              <Image
+                  source={{ uri: item.image }}
+                  style={styles.image}
+               />
+              <Text style={styles.chefCardText}>
+                { item.description }
+              </Text>
+            </Card>
+           </View> 
+        ))
+      } 
       </ScrollView>
     );
   }
@@ -66,6 +63,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     justifyContent: "center",
   },
+  image: {
+    width: ITEM_WIDTH,
+    height: 300,
+  },  
 });
 
 export default ChefRecommended;
